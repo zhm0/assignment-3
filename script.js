@@ -27,7 +27,22 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    if (numRows === 0)
+    {
+        addR();
+    }
+    else
+    {
+        for (let i = 0; i < numRows; ++i)
+        {
+            let box = document.createElement("td");
+            box.onclick = function() {
+                this.style.backgroundColor = colorSelected;
+            };
+            document.querySelectorAll("tr")[i].appendChild(box);
+        }
+        ++numCols;
+    }
 }
 
 // Remove a row
