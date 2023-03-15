@@ -92,7 +92,15 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let rows = document.querySelectorAll("tr");
+    for (let i = 0; i < numRows; ++i) {
+        let currentRow = rows[i].querySelectorAll("td");
+        currentRow.forEach(cell => {
+            if (!cell.style.backgroundColor) {
+                cell.style.backgroundColor = colorSelected;
+            }
+        })
+    }
 }
 
 // Fill all cells
