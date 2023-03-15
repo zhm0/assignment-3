@@ -116,5 +116,11 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let rows = document.querySelectorAll("tr");
+    for (let i = 0; i < numRows; ++i) {
+        let currentRow = rows[i].querySelectorAll("td");
+        currentRow.forEach(cell => {
+            cell.style.backgroundColor = null;
+        })
+    }
 }
